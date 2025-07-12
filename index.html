@@ -1,103 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kindle UI</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fc;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 240px;
+      background-color: white;
+      padding: 20px;
+      border-right: 1px solid #ddd;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+
+    .menu-section {
+      margin-bottom: 30px;
+    }
+
+    .menu-section h4 {
+      margin-bottom: 10px;
+      color: #888;
+      font-weight: 600;
+    }
+
+    .menu-section ul {
+      list-style: none;
+    }
+
+    .menu-section ul li {
+      padding: 8px 0;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .menu-section ul li:hover {
+      color: #5b21b6;
+    }
+
+    .main {
+      flex: 1;
+      padding: 30px;
+    }
+
+    .main-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .main-header h1 {
+      font-size: 24px;
+    }
+
+    .search-bar input {
+      padding: 10px 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+
+    .book-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .book-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      display: flex;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .book-card:hover {
+      transform: scale(1.02);
+    }
+
+    .book-card img {
+      width: 110px;
+      object-fit: cover;
+    }
+
+    .book-content {
+      padding: 15px;
+      flex: 1;
+    }
+
+    .book-content h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .book-content p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 12px;
+    }
+
+    .read-more {
+      background-color: #e9d5ff;
+      color: #6b21a8;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="user">
-        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Profile" class="profile-pic"/>
-        <p>Welcome Back</p>
-        <h2>Sarah</h2>
+  <div class="sidebar">
+    <h2>Books</h2>
+    <div class="menu-section">
+      <h4>Menu</h4>
+      <ul>
+        <li>My Books</li>
+        <li>Favorite Books</li>
+        <li>My Categories</li>
+        <li>My Messages</li>
+      </ul>
+    </div>
+    <div class="menu-section">
+      <h4>Books Types</h4>
+      <ul>
+        <li>Biography</li>
+        <li>Kids</li>
+        <li>Sports</li>
+      </ul>
+    </div>
+  </div>
+  <div class="main">
+    <div class="main-header">
+      <h1>My Books</h1>
+      <div class="search-bar">
+        <input type="text" placeholder="Search...">
       </div>
-      <nav class="menu">
-        <a href="#">My Kindle Board</a>
-        <a href="#">Collections</a>
-        <a href="#">Saved</a>
-        <a href="#">Profile</a>
-        <a href="#">Logout</a>
-      </nav>
-      <p class="footer">Product of <strong>Amazon</strong></p>
-    </aside>
-
-    <!-- Main Content -->
-    <main class="main-content">
-      <!-- Top Header -->
-      <header class="topbar">
-        <h1>Books you read last</h1>
-        <input type="text" placeholder="Search your books..." />
-      </header>
-
-      <!-- Recent Books Section -->
-      <section class="recent-books">
-        <div class="book-card">
-          <img src="https://covers.openlibrary.org/b/id/7984916-L.jpg" alt="Harry Potter" />
-          <div>
-            <h3>Harry Potter and the Sorcerer's Stone</h3>
-            <p>193 Pages • Chapter 13 • Last Read</p>
-          </div>
+    </div>
+    <div class="book-grid">
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/8231856-L.jpg" alt="Warren Buffet">
+        <div class="book-content">
+          <h3>Warren Buffett</h3>
+          <p>Biography of the investor and philanthropist known for his financial genius.</p>
+          <a class="read-more" href="#">Read More</a>
         </div>
-
-        <div class="book-card">
-          <img src="https://covers.openlibrary.org/b/id/10523349-L.jpg" alt="The Water Dancer" />
-          <div>
-            <h3>The Water Dancer</h3>
-            <p>New Purchase • Yet to Read</p>
-          </div>
+      </div>
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/10536624-L.jpg" alt="Gandhi">
+        <div class="book-content">
+          <h3>True Experiment</h3>
+          <p>Story of Gandhi's journey of truth and leadership in India.</p>
+          <a class="read-more" href="#">Read More</a>
         </div>
-
-        <div class="book-card">
-          <img src="https://covers.openlibrary.org/b/id/13494661-L.jpg" alt="Father and Son" />
-          <div>
-            <h3>The Life of Father and Son</h3>
-          </div>
+      </div>
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/8228691-L.jpg" alt="Charlotte's Web">
+        <div class="book-content">
+          <h3>Charlotte's Web</h3>
+          <p>A classic children's novel about friendship and life on a farm.</p>
+          <a class="read-more" href="#">Read More</a>
         </div>
-      </section>
-
-      <!-- New Releases -->
-      <section class="new-release">
-        <h2>New Release</h2>
-        <div class="book-grid">
-          <div class="book-tile">
-            <img src="https://covers.openlibrary.org/b/id/10370993-L.jpg" />
-            <p>The Glass Hotel<br/><span>Mystery</span></p>
-          </div>
-          <div class="book-tile">
-            <img src="https://covers.openlibrary.org/b/id/10206058-L.jpg" />
-            <p>The Book of Longings<br/><span>Fiction</span></p>
-          </div>
-          <div class="book-tile">
-            <img src="https://covers.openlibrary.org/b/id/10264356-L.jpg" />
-            <p>Darling Rose Gold<br/><span>Mystery</span></p>
-          </div>
-          <div class="book-tile">
-            <img src="https://covers.openlibrary.org/b/id/10493564-L.jpg" />
-            <p>My Dark Vanessa<br/><span>Mystery</span></p>
-          </div>
-          <div class="book-tile">
-            <img src="https://covers.openlibrary.org/b/id/10241855-L.jpg" />
-            <p>Weather<br/><span>Mystery</span></p>
-          </div>
+      </div>
+      <div class="book-card">
+        <img src="https://m.media-amazon.com/images/I/81kRqt9rYyL.jpg" alt="Dhoni Touch">
+        <div class="book-content">
+          <h3>The Dhoni Touch</h3>
+          <p>The story of MS Dhoni, a cricket legend and Indian icon.</p>
+          <a class="read-more" href="#">Read More</a>
         </div>
-      </section>
-
-      <!-- Famous Authors -->
-      <aside class="famous-authors">
-        <h2>Famous Authors</h2>
-        <ul>
-          <li><strong>J.K. Rowling</strong><br/>10 Books</li>
-          <li><strong>Stephen King</strong><br/>61 Novels</li>
-          <li><strong>Danielle Steel</strong><br/>179 Books</li>
-        </ul>
-      </aside>
-    </main>
+      </div>
+      <div class="book-card">
+        <img src="https://m.media-amazon.com/images/I/81gTwYAhU7L.jpg" alt="Sky Runner">
+        <div class="book-content">
+          <h3>Sky Runner</h3>
+          <p>A runner's journey through endurance and strength in the wild.</p>
+          <a class="read-more" href="#">Read More</a>
+        </div>
+      </div>
+      <div class="book-card">
+        <img src="https://covers.openlibrary.org/b/id/11138714-L.jpg" alt="Nelson Mandela">
+        <div class="book-content">
+          <h3>Nelson Mandela</h3>
+          <p>Biography of Mandela, from prisoner to president and global icon.</p>
+          <a class="read-more" href="#">Read More</a>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 </html>
-
-
