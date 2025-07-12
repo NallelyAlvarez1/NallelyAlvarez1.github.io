@@ -1,102 +1,102 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kindle Clone</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Amazon+Ember:wght@400,700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kindle UI</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Kindle.</h1>
-        </header>
-        
-        <section class="welcome-section">
-            <h2>Books you read last</h2>
-            <p class="welcome-back">Welcome Back Sarah</p>
-        </section>
-        
-        <div class="divider"></div>
-        
-        <section class="current-book">
-            <h3>Harry Potter</h3>
-            <p class="book-title">Harry Potter And The Sorcerers Stone</p>
-            <p class="book-progress">193 Page - Chapter 13 - Last Read</p>
-        </section>
-        
-        <div class="divider"></div>
-        
-        <section class="new-book">
-            <p class="author">TA NEHISI GOATES</p>
-            <p class="book-title">THE WATER DANCER</p>
-            <p class="book-status">TA Nehisi Goates The Water Dancer</p>
-            <p class="purchase-status">New Purchase - Yet to Read</p>
-        </section>
-        
-        <nav class="menu">
-            <ul>
-                <li>Collections</li>
-                <li>Saved</li>
-                <li>Profile</li>
-                <li>Logout</li>
-            </ul>
-        </nav>
-        
-        <div class="divider"></div>
-        
-        <section class="new-releases">
-            <h3>New Release</h3>
-            <h4>THE GLASS HOTEL</h4>
-            
-            <div class="book-card">
-                <p class="book-title">The Glass Hotel</p>
-                <p class="author">Emily St. John</p>
-                <p class="genre">Mystery</p>
-            </div>
-            
-            <div class="book-card">
-                <p class="book-title">The Book of Longings</p>
-                <p class="author">Sue Monk</p>
-                <p class="genre">Fiction</p>
-            </div>
-        </section>
-        
-        <div class="divider"></div>
-        
-        <section class="featured-book">
-            <p class="book-title">Darling Rose Gold</p>
-            <p class="author">Stephanie Wrobel</p>
-            <p class="source">Twitter</p>
-        </section>
-        
-        <div class="divider"></div>
-        
-        <section class="popular-authors">
-            <h3>Family Authors</h3>
-            
-            <div class="author-card">
-                <p class="author-name">J.K. Rowling</p>
-                <p class="book-count">10 Books</p>
-            </div>
-            
-            <div class="author-card">
-                <p class="author-name">Stephen King</p>
-                <p class="book-count">61 Novels</p>
-            </div>
-            
-            <div class="author-card">
-                <p class="author-name">Weather</p>
-                <p class="book-count">Jenny Offill</p>
-                <p class="genre">Mystery</p>
-            </div>
-            
-            <div class="author-card">
-                <p class="author-name">Danielle Steel</p>
-                <p class="book-count">179 Books</p>
-            </div>
-        </section>
-    </div>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="user">
+        <img src="https://via.placeholder.com/60" alt="Profile" class="profile-pic"/>
+        <p>Welcome Back</p>
+        <h2>Sarah</h2>
+      </div>
+      <nav class="menu">
+        <a href="#">My Kindle Board</a>
+        <a href="#">Collections</a>
+        <a href="#">Saved</a>
+        <a href="#">Profile</a>
+        <a href="#">Logout</a>
+      </nav>
+      <p class="footer">Product of <strong>Amazon</strong></p>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Top Header -->
+      <header class="topbar">
+        <h1>Books you read last</h1>
+        <input type="text" placeholder="Search your books..." />
+      </header>
+
+      <!-- Recent Books Section -->
+      <section class="recent-books">
+        <div class="book-card">
+          <img src="https://covers.openlibrary.org/b/id/7984916-L.jpg" alt="Harry Potter" />
+          <div>
+            <h3>Harry Potter And The Sorcerer's Stone</h3>
+            <p>193 Pages • Chapter 13 • Last Read</p>
+          </div>
+        </div>
+
+        <div class="book-card">
+          <img src="https://via.placeholder.com/100x150" alt="Water Dancer" />
+          <div>
+            <h3>The Water Dancer</h3>
+            <p>New Purchase • Yet to Read</p>
+          </div>
+        </div>
+
+        <div class="book-card">
+          <img src="https://via.placeholder.com/100x150" alt="Father and Son" />
+          <div>
+            <h3>The Life of Father and Son</h3>
+          </div>
+        </div>
+      </section>
+
+      <!-- New Releases -->
+      <section class="new-release">
+        <h2>New Release</h2>
+        <div class="book-grid">
+          <div class="book-tile">
+            <img src="https://via.placeholder.com/100x150" />
+            <p>The Glass Hotel<br/><span>Mystery</span></p>
+          </div>
+          <div class="book-tile">
+            <img src="https://via.placeholder.com/100x150" />
+            <p>The Book of Longings<br/><span>Fiction</span></p>
+          </div>
+          <div class="book-tile">
+            <img src="https://via.placeholder.com/100x150" />
+            <p>Darling Rose Gold<br/><span>Mystery</span></p>
+          </div>
+          <div class="book-tile">
+            <img src="https://via.placeholder.com/100x150" />
+            <p>My Dark Vanessa<br/><span>Mystery</span></p>
+          </div>
+          <div class="book-tile">
+            <img src="https://via.placeholder.com/100x150" />
+            <p>Weather<br/><span>Mystery</span></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Famous Authors -->
+      <aside class="famous-authors">
+        <h2>Famous Authors</h2>
+        <ul>
+          <li><strong>J.K. Rowling</strong><br/>10 Books</li>
+          <li><strong>Stephen King</strong><br/>61 Novels</li>
+          <li><strong>Danielle Steel</strong><br/>179 Books</li>
+        </ul>
+      </aside>
+    </main>
+  </div>
 </body>
 </html>
+
